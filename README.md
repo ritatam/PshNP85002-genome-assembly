@@ -68,7 +68,7 @@ cat PshNP80052_blast_output/*.blast > all.blast
 
 ### 4. Hi-C phasing & scaffolding
 
-see custom script `juicer_3ddna.sh`. This processes all required input files (e.g. site positions) for Juicer and 3D-DNA. 
+see custom script `hic/juicer_3ddna.sh`. This processes all required input files (e.g. site positions) for Juicer and 3D-DNA. 
 
 **Juicer configuration**
 
@@ -156,7 +156,7 @@ busco -i PshNP80052.final.fasta -l basidiomycota -m DNA -t 24
 
 **count within- and cross-haplotype Hi-C contact links**
 
-Generate HiC contact matrices with HiC-Pro. Iutput files prep, configuration (ligation sites set as above; minimum MAPQ threshold set to 20) and HiC-Pro execution are automated in `hicpro.sh`
+Generate HiC contact matrices with HiC-Pro. Iutput files prep, configuration (ligation sites set as above; minimum MAPQ threshold set to 20) and HiC-Pro execution are automated in `hic/hicpro.sh`
 ```bash
 mkdir -p hicpro/PshNP80052
 bash hicpro.sh -g PshNP80052.final.fasta -s PshNP80052 --hic1 PshNP80052.HiC_R1.fastq.gz --hic2 PshNP80052.HiC_R2.fastq.gz -o hicpro/PshNP80052
@@ -210,11 +210,11 @@ cat hapA/funannotate_abinitio/predict_results/Puccinia_striiformis_PshNP80052_ha
 
 **Merging of liftoff-derived and ab initio annotations**
 
-See `merge_liftoff_abinitio_annotation.sh`.
+See `gene_annotation/merge_liftoff_abinitio_annotation.sh`.
 
 **Functional annotation** 
 
-See `functional_annotation.sh`.
+See `gene_annotation/functional_annotation.sh`.
 
 ---
 
